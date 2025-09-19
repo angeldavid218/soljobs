@@ -1,0 +1,262 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newApplicantID",
+						"type": "uint256"
+					}
+				],
+				"name": "ApplicantProfileCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newCreatorID",
+						"type": "uint256"
+					}
+				],
+				"name": "CreatorProfileCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "applicantProfiles",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "applicantAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "fullname",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "location",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bio",
+						"type": "string"
+					},
+					{
+						"internalType": "enum ProfileType",
+						"name": "profileType",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_fullname",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_location",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_bio",
+						"type": "string"
+					}
+				],
+				"name": "createApplicantProfile",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_tagline",
+						"type": "string"
+					}
+				],
+				"name": "createCreatorProfile",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "creatorProfiles",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "tagline",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "creatorAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "verified",
+						"type": "bool"
+					},
+					{
+						"internalType": "enum ProfileType",
+						"name": "profileType",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Create, apply and award remote jobs on the blockchain",
+			"kind": "dev",
+			"methods": {},
+			"title": "SolJobs",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"soljobs.sol": "SolJobs"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"constants.sol": {
+			"keccak256": "0x67d1a3eda6bece748d8c3cf42de0cc856a501e747f4b642e3e51cccbfa7e6080",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4fb8f2e57fb869e4a1c9d2bbfff87e222caef5741b06935fcaa343653e593f46",
+				"dweb:/ipfs/QmV1NeXmLmF6KSV5odSUUqpAuek3aYAKPghFfvpipmXujb"
+			]
+		},
+		"enums.sol": {
+			"keccak256": "0x869525014db5cefcd1674a60472071872bc42a16859761718e2b6c3fbd3787fb",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://3bf8413cceb499916416460201d19024c716ea26795068a658a334d8f6131b7f",
+				"dweb:/ipfs/QmQQatvi9FAM5DmXHainTMXkfuF5iouUERPVkqnGTRDcgp"
+			]
+		},
+		"soljobs.sol": {
+			"keccak256": "0xf682ea2d53df80f2812c5ba433d847c4283cc0d65e2947916869d313e783dd24",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ad06386ee941756ab1a2cc3abebc36b311e05351a9665418659c1306a61ece2d",
+				"dweb:/ipfs/QmPuF93KrzZTrQeo9DYcky3JQPSDm7FViRNdm9d1GAd43V"
+			]
+		},
+		"structs.sol": {
+			"keccak256": "0x301df60a7ba6fd05600e324076f90b68c595784a3d13cabc23f24cc9e8be3bbc",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d38af79406c0fcd9d769ead1a28b68999fa075ff272d3920966952c21167e44b",
+				"dweb:/ipfs/QmbYsvRtFzZVitgN9g9e86HZ4kQfT8bfNg19yf1HkFg2At"
+			]
+		}
+	},
+	"version": 1
+}

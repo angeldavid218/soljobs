@@ -13,7 +13,7 @@ import "./constants.sol";
 contract SolJobs {
     address private manager;
 
-    mapping (address => CreatorProfile) public creatorProfiles;
+    mapping (address => CreatorProfile) public creatorProfiles; 
     mapping (address => ApplicantProfile) public applicantProfiles;
 
     uint internal numberOfCreatorProfiles;
