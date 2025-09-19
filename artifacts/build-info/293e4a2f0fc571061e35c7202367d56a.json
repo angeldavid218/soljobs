@@ -1,0 +1,257 @@
+{
+	"id": "293e4a2f0fc571061e35c7202367d56a",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.30",
+	"solcLongVersion": "0.8.30+commit.73712a01",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"constants.sol": {
+				"content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.7.0 <0.9.0;\n\n// error messages\nstring constant emailAlreadyExistsMsg = \"Email already exists!\";\nstring constant addressAlreadyExistsMsg = \"Address already exists!\";\nstring constant callerHasNoCreatorProfile = \"The caller does not have a creator profile\";\nstring constant callerHasNoApplicantProfile = \"The caller does not have an applicant profile\";\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"sources": {
+			"constants.sol": {
+				"ast": {
+					"absolutePath": "constants.sol",
+					"exportedSymbols": {
+						"addressAlreadyExistsMsg": [
+							7
+						],
+						"callerHasNoApplicantProfile": [
+							13
+						],
+						"callerHasNoCreatorProfile": [
+							10
+						],
+						"emailAlreadyExistsMsg": [
+							4
+						]
+					},
+					"id": 14,
+					"license": "GPL-3.0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								">=",
+								"0.7",
+								".0",
+								"<",
+								"0.9",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "37:31:0"
+						},
+						{
+							"constant": true,
+							"id": 4,
+							"mutability": "constant",
+							"name": "emailAlreadyExistsMsg",
+							"nameLocation": "104:21:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 14,
+							"src": "88:63:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 2,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "88:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "456d61696c20616c72656164792065786973747321",
+								"id": 3,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "128:23:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_d5aeb68c143577506dcff4ff6e618b7e7e529015513cfc5c35cc9992692340be",
+									"typeString": "literal_string \"Email already exists!\""
+								},
+								"value": "Email already exists!"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 7,
+							"mutability": "constant",
+							"name": "addressAlreadyExistsMsg",
+							"nameLocation": "169:23:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 14,
+							"src": "153:67:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 5,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "153:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "4164647265737320616c72656164792065786973747321",
+								"id": 6,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "195:25:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_1d440245742b1f8a635bf849865a95705acc691d98f1ecd64a7bf822d6eef99a",
+									"typeString": "literal_string \"Address already exists!\""
+								},
+								"value": "Address already exists!"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 10,
+							"mutability": "constant",
+							"name": "callerHasNoCreatorProfile",
+							"nameLocation": "238:25:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 14,
+							"src": "222:88:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 8,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "222:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "5468652063616c6c657220646f6573206e6f74206861766520612063726561746f722070726f66696c65",
+								"id": 9,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "266:44:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_05dea7a4b749a72103fdaacfd8c830026d599fd95b58e235d7a5b87bda223903",
+									"typeString": "literal_string \"The caller does not have a creator profile\""
+								},
+								"value": "The caller does not have a creator profile"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 13,
+							"mutability": "constant",
+							"name": "callerHasNoApplicantProfile",
+							"nameLocation": "328:27:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 14,
+							"src": "312:93:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 11,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "312:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "5468652063616c6c657220646f6573206e6f74206861766520616e206170706c6963616e742070726f66696c65",
+								"id": 12,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "358:47:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_9755ada8cad867ffa51d229fac4adc70eea3cdc0842b0add29f0fba8b4558158",
+									"typeString": "literal_string \"The caller does not have an applicant profile\""
+								},
+								"value": "The caller does not have an applicant profile"
+							},
+							"visibility": "internal"
+						}
+					],
+					"src": "37:370:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

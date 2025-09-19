@@ -26,3 +26,22 @@ struct ApplicantProfile {
     ProfileType profileType;
     uint[] applicationIDs;
 }
+
+struct JobOffer {
+    uint id;
+    string title;
+    string description;
+    uint compensation;
+    CreatorProfile creator;
+    JobApplication[] applications;
+}
+
+
+struct JobApplication {
+    uint id;
+    uint jobOfferId;
+    string  coverLetter;
+    ApplicantProfile applicant;
+    JobApplicationStatus status;
+}
+

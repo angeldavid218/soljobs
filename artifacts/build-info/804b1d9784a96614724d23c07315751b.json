@@ -1,0 +1,134 @@
+{
+	"id": "804b1d9784a96614724d23c07315751b",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.30",
+	"solcLongVersion": "0.8.30+commit.73712a01",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"enums.sol": {
+				"content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.7.0 <0.9.0;\n\nenum ProfileType { Creator, Applicant }\n\n\nenum JobApplicationStatus {\n    Pending,\n    Approved,\n    Rejected\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"sources": {
+			"enums.sol": {
+				"ast": {
+					"absolutePath": "enums.sol",
+					"exportedSymbols": {
+						"JobApplicationStatus": [
+							8
+						],
+						"ProfileType": [
+							4
+						]
+					},
+					"id": 9,
+					"license": "GPL-3.0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								">=",
+								"0.7",
+								".0",
+								"<",
+								"0.9",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "37:31:0"
+						},
+						{
+							"canonicalName": "ProfileType",
+							"id": 4,
+							"members": [
+								{
+									"id": 2,
+									"name": "Creator",
+									"nameLocation": "89:7:0",
+									"nodeType": "EnumValue",
+									"src": "89:7:0"
+								},
+								{
+									"id": 3,
+									"name": "Applicant",
+									"nameLocation": "98:9:0",
+									"nodeType": "EnumValue",
+									"src": "98:9:0"
+								}
+							],
+							"name": "ProfileType",
+							"nameLocation": "75:11:0",
+							"nodeType": "EnumDefinition",
+							"src": "70:39:0"
+						},
+						{
+							"canonicalName": "JobApplicationStatus",
+							"id": 8,
+							"members": [
+								{
+									"id": 5,
+									"name": "Pending",
+									"nameLocation": "144:7:0",
+									"nodeType": "EnumValue",
+									"src": "144:7:0"
+								},
+								{
+									"id": 6,
+									"name": "Approved",
+									"nameLocation": "157:8:0",
+									"nodeType": "EnumValue",
+									"src": "157:8:0"
+								},
+								{
+									"id": 7,
+									"name": "Rejected",
+									"nameLocation": "171:8:0",
+									"nodeType": "EnumValue",
+									"src": "171:8:0"
+								}
+							],
+							"name": "JobApplicationStatus",
+							"nameLocation": "117:20:0",
+							"nodeType": "EnumDefinition",
+							"src": "112:69:0"
+						}
+					],
+					"src": "37:144:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

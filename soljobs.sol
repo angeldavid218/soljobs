@@ -25,6 +25,14 @@ contract SolJobs {
     mapping (address => bool) private creatorAddresses;
     mapping (address => bool) private applicantAddresses;
 
+    uint numberOfJobsCreated;
+    mapping (uint => JobOffer) public jobOffers;
+
+    uint numberOfApplications;
+    mapping (uint => JobApplication) public jobApplications;
+
+
+
     constructor() {
         manager = msg.sender;
     }
@@ -36,8 +44,21 @@ contract SolJobs {
         _;
     }
 
+    modifier callerHasCreatorProfile(address _address) {
+        require(creatorAddresses[_address] == true, callerHasNoCreatorProfile);
+        _;
+    }
+
+    modifier callerHasApplicantProfile(address _address) {
+        require(applicantAddresses[_address] == true, callerHasNoApplicantProfile);
+        _;
+    }
+
+
     event CreatorProfileCreated(uint newCreatorID);
     event ApplicantProfileCreated(uint newApplicantID);
+    event JobCreated(uint newJobID);
+    event ApplicationSubmitted(uint applicationID);
 
     function createCreatorProfile(
         string calldata _name,
@@ -91,4 +112,48 @@ contract SolJobs {
 
         emit ApplicantProfileCreated(applicantID);
     }
+
+    function createJobOffer(
+        string calldata title,
+        string calldata description,
+        uint compensation
+    ) external callerHasCreatorProfile(msg.sender) {
+        uint jobID = ++numberOfJobsCreated;
+        JobOffer storage job = jobOffers[jobID];
+        job.id = jobID;
+        job.title = title;
+        job.description = description;
+        job.compensation = compensation;
+        
+        CreatorProfile memory creator = creatorProfiles[msg.sender];
+        job.creator = creator;
+
+
+        
+        emit JobCreated(jobID);
+    }
+
+    function applyForAJob(
+        uint jobID,
+        string calldata coverLetter
+    ) external callerHasApplicantProfile(msg.sender) {
+        uint applicationID = ++numberOfApplications;
+
+        JobOffer storage jobOffer = jobOffers[jobID];
+
+        JobApplication storage jobApplication = jobApplications[applicationID];
+        jobApplication.id = applicationID;
+        jobApplication.jobOfferId = jobID;
+        jobApplication.coverLetter = coverLetter;
+        jobApplication.applicant = applicantProfiles[msg.sender];
+        jobApplication.status = JobApplicationStatus.Pending;
+
+        jobOffer.applications.push(jobApplication);
+        
+        emit ApplicationSubmitted(applicationID);
+
+
+    }
+        
+
 }
