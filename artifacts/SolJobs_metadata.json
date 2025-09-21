@@ -132,6 +132,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "applicationID",
+						"type": "uint256"
+					}
+				],
+				"name": "approveApplication",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_fullname",
 						"type": "string"
@@ -200,6 +213,11 @@
 					{
 						"internalType": "uint256",
 						"name": "compensation",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numberOfMaxHires",
 						"type": "uint256"
 					}
 				],
@@ -424,9 +442,37 @@
 						"internalType": "struct CreatorProfile",
 						"name": "creator",
 						"type": "tuple"
+					},
+					{
+						"internalType": "enum JobOfferStatus",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numberOfMaxHires",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numberHired",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "applicationID",
+						"type": "uint256"
+					}
+				],
+				"name": "rejectApplication",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -460,35 +506,35 @@
 	},
 	"sources": {
 		"constants.sol": {
-			"keccak256": "0x26bd44bf0114ca696c36ea8f2cae6a25e344ca2a11369a9c40a17c1bd82cbb07",
+			"keccak256": "0x21c4f54c2617a19dbaa0437c3f0c96e694c12507d83143f90fefe66b0a938610",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://34d963dd5ecc9a7aa8a836aa513c34d8c9005cf00d91ec3d3d3131fa2e4dfd89",
-				"dweb:/ipfs/QmR3yKmyR7UWGGyhbZcvrtL7C6gKD8MmjyMrJ3PkMxLhtm"
+				"bzz-raw://d20fa11db44f41f0b4521ad91d4f5a9c6227d26aeaa6cbd550070e75ac1dee0d",
+				"dweb:/ipfs/QmZA9cSU2HENP1aqovuoD4UooQK5AWrEjSVoKs6dDRvh6c"
 			]
 		},
 		"enums.sol": {
-			"keccak256": "0xf772bcac96b33bc887df8872529ac69ae24dda37de1e149868e54d8efe9af9a9",
+			"keccak256": "0xf333338092d07e401d61264d72f29474fea60fb809043509b84beeaf3ba0049f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5f2947676562ab2107769b1f625d155d5dfdacf2543f308141d4ea3406dfc1ab",
-				"dweb:/ipfs/QmRMBFCpxtAJLQTGXeb4G8NeWDorVpaGisFm5CkvDcS9br"
+				"bzz-raw://5c35636d54228476fd7449037640b5e2755f7fb59f012760adbf2abf5c35323d",
+				"dweb:/ipfs/QmW4FwEhuSFvcLwgd7aDDCbwfLXyVKmgZFtSJj9Q8V38UQ"
 			]
 		},
 		"soljobs.sol": {
-			"keccak256": "0x7a29f12823eb1c7e022be36a4baa6ca9bf6ac6ce42823966caf5339118ec3e14",
+			"keccak256": "0xde5eb0b58282c2d4b3560b357937a6c7ce6a5fe99f6e07af6f01f8c71215c18f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://56ab1b0987d70da63f2f6dd7b55e6df7b2bebd599dd1b69808ab6e1916370e95",
-				"dweb:/ipfs/QmQW1se6HEo9YNyxkaXhewQd5Crm46vXEiMHjWYD39GWLc"
+				"bzz-raw://05d75f2fa693570b0f7526b29f053134bd30f09775740f070c54930044ba924d",
+				"dweb:/ipfs/Qmb3GMMX2LC6n1AZH9bSh2Yg2Fhno4i7ryEC98sWgCu6ZL"
 			]
 		},
 		"structs.sol": {
-			"keccak256": "0x79c01728a8c64fa4aa9f6c60807a4c942a23b57719a47390ad4259b24e947efe",
+			"keccak256": "0xa87f533f769b2324e8097f115e347d1c411dbfa8227fa225c439310edec41957",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c299d14bccfc48d6d48862acacfb3a9b1a7036df68860b0d924b95ba09453351",
-				"dweb:/ipfs/QmUAsEgGVM5kCJYaGi86bhoX7onopf3AMx54psvFoW5mdV"
+				"bzz-raw://1e55d5a445ee5dcc3547c5ff3b3b29f98ab276ccf783354c194bcc74f4296cbd",
+				"dweb:/ipfs/QmSsvJspyYu1XdYYhzMf4EyeoXtv1hrMyN3Fyy52S322d2"
 			]
 		}
 	},

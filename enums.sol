@@ -10,3 +10,10 @@ enum JobApplicationStatus {
     Approved,
     Rejected
 }
+
+
+enum JobOfferStatus {
+    Open,
+    Filled,
+    Closed
+}

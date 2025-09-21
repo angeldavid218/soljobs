@@ -1,5 +1,5 @@
 {
-	"id": "293e4a2f0fc571061e35c7202367d56a",
+	"id": "9daa0e5acad10126726a1ef9c0e685f5",
 	"_format": "hh-sol-build-info-1",
 	"solcVersion": "0.8.30",
 	"solcLongVersion": "0.8.30+commit.73712a01",
@@ -7,7 +7,7 @@
 		"language": "Solidity",
 		"sources": {
 			"constants.sol": {
-				"content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.7.0 <0.9.0;\n\n// error messages\nstring constant emailAlreadyExistsMsg = \"Email already exists!\";\nstring constant addressAlreadyExistsMsg = \"Address already exists!\";\nstring constant callerHasNoCreatorProfile = \"The caller does not have a creator profile\";\nstring constant callerHasNoApplicantProfile = \"The caller does not have an applicant profile\";\n"
+				"content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.7.0 <0.9.0;\n\n// error messages\nstring constant emailAlreadyExistsMsg = \"Email already exists!\";\nstring constant addressAlreadyExistsMsg = \"Address already exists!\";\nstring constant callerHasNoCreatorProfile = \"The caller does not have a creator profile\";\nstring constant callerHasNoApplicantProfile = \"The caller does not have an applicant profile\";\nstring constant jobIsNoLongerOpen = \"The job offer is no longer accepting applications\";\nstring constant jobMaxedOutHires = \"The job offer has reached the maximum number of hires\";\nstring constant applicationNotOpen = \"The application is not open\";\n"
 			}
 		},
 		"settings": {
@@ -47,6 +47,9 @@
 						"addressAlreadyExistsMsg": [
 							7
 						],
+						"applicationNotOpen": [
+							22
+						],
 						"callerHasNoApplicantProfile": [
 							13
 						],
@@ -55,9 +58,15 @@
 						],
 						"emailAlreadyExistsMsg": [
 							4
+						],
+						"jobIsNoLongerOpen": [
+							16
+						],
+						"jobMaxedOutHires": [
+							19
 						]
 					},
-					"id": 14,
+					"id": 23,
 					"license": "GPL-3.0",
 					"nodeType": "SourceUnit",
 					"nodes": [
@@ -82,7 +91,7 @@
 							"name": "emailAlreadyExistsMsg",
 							"nameLocation": "104:21:0",
 							"nodeType": "VariableDeclaration",
-							"scope": 14,
+							"scope": 23,
 							"src": "88:63:0",
 							"stateVariable": false,
 							"storageLocation": "default",
@@ -125,7 +134,7 @@
 							"name": "addressAlreadyExistsMsg",
 							"nameLocation": "169:23:0",
 							"nodeType": "VariableDeclaration",
-							"scope": 14,
+							"scope": 23,
 							"src": "153:67:0",
 							"stateVariable": false,
 							"storageLocation": "default",
@@ -168,7 +177,7 @@
 							"name": "callerHasNoCreatorProfile",
 							"nameLocation": "238:25:0",
 							"nodeType": "VariableDeclaration",
-							"scope": 14,
+							"scope": 23,
 							"src": "222:88:0",
 							"stateVariable": false,
 							"storageLocation": "default",
@@ -211,7 +220,7 @@
 							"name": "callerHasNoApplicantProfile",
 							"nameLocation": "328:27:0",
 							"nodeType": "VariableDeclaration",
-							"scope": 14,
+							"scope": 23,
 							"src": "312:93:0",
 							"stateVariable": false,
 							"storageLocation": "default",
@@ -246,9 +255,138 @@
 								"value": "The caller does not have an applicant profile"
 							},
 							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 16,
+							"mutability": "constant",
+							"name": "jobIsNoLongerOpen",
+							"nameLocation": "423:17:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 23,
+							"src": "407:87:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 14,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "407:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "546865206a6f62206f66666572206973206e6f206c6f6e67657220616363657074696e67206170706c69636174696f6e73",
+								"id": 15,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "443:51:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_a3605fa09f1c5c7279bc358c171f0da9ae269353595c63c3961d947ae51550d5",
+									"typeString": "literal_string \"The job offer is no longer accepting applications\""
+								},
+								"value": "The job offer is no longer accepting applications"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 19,
+							"mutability": "constant",
+							"name": "jobMaxedOutHires",
+							"nameLocation": "512:16:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 23,
+							"src": "496:90:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 17,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "496:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "546865206a6f62206f6666657220686173207265616368656420746865206d6178696d756d206e756d626572206f66206869726573",
+								"id": 18,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "531:55:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_fe2a88889d6dd3ff780a2cd9ed26142d2f7b31e1e6b76f2312861d399975bc4f",
+									"typeString": "literal_string \"The job offer has reached the maximum number of hires\""
+								},
+								"value": "The job offer has reached the maximum number of hires"
+							},
+							"visibility": "internal"
+						},
+						{
+							"constant": true,
+							"id": 22,
+							"mutability": "constant",
+							"name": "applicationNotOpen",
+							"nameLocation": "604:18:0",
+							"nodeType": "VariableDeclaration",
+							"scope": 23,
+							"src": "588:66:0",
+							"stateVariable": false,
+							"storageLocation": "default",
+							"typeDescriptions": {
+								"typeIdentifier": "t_string_memory_ptr",
+								"typeString": "string"
+							},
+							"typeName": {
+								"id": 20,
+								"name": "string",
+								"nodeType": "ElementaryTypeName",
+								"src": "588:6:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_string_storage_ptr",
+									"typeString": "string"
+								}
+							},
+							"value": {
+								"hexValue": "546865206170706c69636174696f6e206973206e6f74206f70656e",
+								"id": 21,
+								"isConstant": false,
+								"isLValue": false,
+								"isPure": true,
+								"kind": "string",
+								"lValueRequested": false,
+								"nodeType": "Literal",
+								"src": "625:29:0",
+								"typeDescriptions": {
+									"typeIdentifier": "t_stringliteral_6c79670bc4adc779c80ae0bb0bb07b1ae2c563350e0e76d21360874ced98cc40",
+									"typeString": "literal_string \"The application is not open\""
+								},
+								"value": "The application is not open"
+							},
+							"visibility": "internal"
 						}
 					],
-					"src": "37:370:0"
+					"src": "37:619:0"
 				},
 				"id": 0
 			}

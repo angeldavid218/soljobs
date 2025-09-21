@@ -1,5 +1,5 @@
 {
-	"id": "804b1d9784a96614724d23c07315751b",
+	"id": "e331903b6c940405a09b2785e77accb3",
 	"_format": "hh-sol-build-info-1",
 	"solcVersion": "0.8.30",
 	"solcLongVersion": "0.8.30+commit.73712a01",
@@ -7,7 +7,7 @@
 		"language": "Solidity",
 		"sources": {
 			"enums.sol": {
-				"content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.7.0 <0.9.0;\n\nenum ProfileType { Creator, Applicant }\n\n\nenum JobApplicationStatus {\n    Pending,\n    Approved,\n    Rejected\n}"
+				"content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.7.0 <0.9.0;\n\nenum ProfileType { Creator, Applicant }\n\n\nenum JobApplicationStatus {\n    Pending,\n    Approved,\n    Rejected\n}\n\n\nenum JobOfferStatus {\n    Open,\n    Filled,\n    Closed\n}\n"
 			}
 		},
 		"settings": {
@@ -47,11 +47,14 @@
 						"JobApplicationStatus": [
 							8
 						],
+						"JobOfferStatus": [
+							12
+						],
 						"ProfileType": [
 							4
 						]
 					},
-					"id": 9,
+					"id": 13,
 					"license": "GPL-3.0",
 					"nodeType": "SourceUnit",
 					"nodes": [
@@ -123,9 +126,40 @@
 							"nameLocation": "117:20:0",
 							"nodeType": "EnumDefinition",
 							"src": "112:69:0"
+						},
+						{
+							"canonicalName": "JobOfferStatus",
+							"id": 12,
+							"members": [
+								{
+									"id": 9,
+									"name": "Open",
+									"nameLocation": "210:4:0",
+									"nodeType": "EnumValue",
+									"src": "210:4:0"
+								},
+								{
+									"id": 10,
+									"name": "Filled",
+									"nameLocation": "220:6:0",
+									"nodeType": "EnumValue",
+									"src": "220:6:0"
+								},
+								{
+									"id": 11,
+									"name": "Closed",
+									"nameLocation": "232:6:0",
+									"nodeType": "EnumValue",
+									"src": "232:6:0"
+								}
+							],
+							"name": "JobOfferStatus",
+							"nameLocation": "189:14:0",
+							"nodeType": "EnumDefinition",
+							"src": "184:56:0"
 						}
 					],
-					"src": "37:144:0"
+					"src": "37:204:0"
 				},
 				"id": 0
 			}

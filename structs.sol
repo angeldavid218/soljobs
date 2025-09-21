@@ -34,6 +34,9 @@ struct JobOffer {
     uint compensation;
     CreatorProfile creator;
     JobApplication[] applications;
+    JobOfferStatus status;
+    uint numberOfMaxHires;
+    uint numberHired;
 }
 
 

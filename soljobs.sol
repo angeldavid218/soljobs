@@ -54,6 +54,12 @@ contract SolJobs {
         _;
     }
 
+    modifier isJobStillOpen(uint jobOfferID) {
+        JobOffer storage job  = jobOffers[jobOfferID];
+        require(job.status == JobOfferStatus.Open, jobIsNoLongerOpen);
+        _;
+    }
+
 
     event CreatorProfileCreated(uint newCreatorID);
     event ApplicantProfileCreated(uint newApplicantID);
@@ -116,7 +122,8 @@ contract SolJobs {
     function createJobOffer(
         string calldata title,
         string calldata description,
-        uint compensation
+        uint compensation,
+        uint numberOfMaxHires
     ) external callerHasCreatorProfile(msg.sender) {
         uint jobID = ++numberOfJobsCreated;
         JobOffer storage job = jobOffers[jobID];
@@ -124,9 +131,12 @@ contract SolJobs {
         job.title = title;
         job.description = description;
         job.compensation = compensation;
+        job.numberOfMaxHires = numberOfMaxHires;
         
         CreatorProfile memory creator = creatorProfiles[msg.sender];
         job.creator = creator;
+        job.status = JobOfferStatus.Open;
+        job.numberHired = 0;
 
 
         
@@ -136,7 +146,7 @@ contract SolJobs {
     function applyForAJob(
         uint jobID,
         string calldata coverLetter
-    ) external callerHasApplicantProfile(msg.sender) {
+    ) external callerHasApplicantProfile(msg.sender) isJobStillOpen(jobID) {
         uint applicationID = ++numberOfApplications;
 
         JobOffer storage jobOffer = jobOffers[jobID];
@@ -153,6 +163,29 @@ contract SolJobs {
         emit ApplicationSubmitted(applicationID);
 
 
+    }
+
+    function approveApplication(uint applicationID) external callerHasCreatorProfile(msg.sender) isJobStillOpen(jobApplications[applicationID].jobOfferId) {
+        
+        JobApplication storage jobApplication = jobApplications[applicationID];
+        JobOffer storage jobOffer = jobOffers[jobApplication.jobOfferId];
+
+        require(jobOffer.numberHired < jobOffer.numberOfMaxHires, jobMaxedOutHires);
+        require(jobApplication.status == JobApplicationStatus.Pending, applicationNotOpen);
+
+        jobApplication.status = JobApplicationStatus.Approved;
+        jobOffer.numberHired++;
+
+        if (jobOffer.numberHired == jobOffer.numberOfMaxHires) {
+            jobOffer.status = JobOfferStatus.Closed;
+        }
+    }
+
+    function rejectApplication(uint applicationID) external callerHasCreatorProfile(msg.sender) {
+        JobApplication storage jobApplication = jobApplications[applicationID];
+
+        // reject the application
+        jobApplication.status = JobApplicationStatus.Rejected;
     }
         
 

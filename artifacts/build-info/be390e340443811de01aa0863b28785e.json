@@ -1,0 +1,1216 @@
+{
+	"id": "be390e340443811de01aa0863b28785e",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.30",
+	"solcLongVersion": "0.8.30+commit.73712a01",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"structs.sol": {
+				"content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.7.0 <0.9.0;\n\nimport \"./enums.sol\";\n\nstruct CreatorProfile {\n    uint id;\n    string email;\n    string name;\n    string tagline;\n    string description;\n    address creatorAddress;\n    bool verified;\n    ProfileType profileType;\n    uint[] jobOfferIDs;\n}\n\nstruct ApplicantProfile {\n    uint id;\n    address applicantAddress;\n    string fullname;\n    string email;\n    string location;\n    string bio;\n    ProfileType profileType;\n    uint[] applicationIDs;\n}\n\nstruct JobOffer {\n    uint id;\n    string title;\n    string description;\n    uint compensation;\n    CreatorProfile creator;\n    JobApplication[] applications;\n    JobOfferStatus status;\n    uint numberOfMaxHires;\n    uint numberHired;\n}\n\n\nstruct JobApplication {\n    uint id;\n    uint jobOfferId;\n    string  coverLetter;\n    ApplicantProfile applicant;\n    JobApplicationStatus status;\n}\n\n"
+			},
+			"enums.sol": {
+				"content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.7.0 <0.9.0;\n\nenum ProfileType { Creator, Applicant }\n\n\nenum JobApplicationStatus {\n    Pending,\n    Approved,\n    Rejected\n}\n\n\nenum JobOfferStatus {\n    Open,\n    Filled,\n    Closed\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"sources": {
+			"enums.sol": {
+				"ast": {
+					"absolutePath": "enums.sol",
+					"exportedSymbols": {
+						"JobApplicationStatus": [
+							8
+						],
+						"JobOfferStatus": [
+							12
+						],
+						"ProfileType": [
+							4
+						]
+					},
+					"id": 13,
+					"license": "GPL-3.0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								">=",
+								"0.7",
+								".0",
+								"<",
+								"0.9",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "37:31:0"
+						},
+						{
+							"canonicalName": "ProfileType",
+							"id": 4,
+							"members": [
+								{
+									"id": 2,
+									"name": "Creator",
+									"nameLocation": "89:7:0",
+									"nodeType": "EnumValue",
+									"src": "89:7:0"
+								},
+								{
+									"id": 3,
+									"name": "Applicant",
+									"nameLocation": "98:9:0",
+									"nodeType": "EnumValue",
+									"src": "98:9:0"
+								}
+							],
+							"name": "ProfileType",
+							"nameLocation": "75:11:0",
+							"nodeType": "EnumDefinition",
+							"src": "70:39:0"
+						},
+						{
+							"canonicalName": "JobApplicationStatus",
+							"id": 8,
+							"members": [
+								{
+									"id": 5,
+									"name": "Pending",
+									"nameLocation": "144:7:0",
+									"nodeType": "EnumValue",
+									"src": "144:7:0"
+								},
+								{
+									"id": 6,
+									"name": "Approved",
+									"nameLocation": "157:8:0",
+									"nodeType": "EnumValue",
+									"src": "157:8:0"
+								},
+								{
+									"id": 7,
+									"name": "Rejected",
+									"nameLocation": "171:8:0",
+									"nodeType": "EnumValue",
+									"src": "171:8:0"
+								}
+							],
+							"name": "JobApplicationStatus",
+							"nameLocation": "117:20:0",
+							"nodeType": "EnumDefinition",
+							"src": "112:69:0"
+						},
+						{
+							"canonicalName": "JobOfferStatus",
+							"id": 12,
+							"members": [
+								{
+									"id": 9,
+									"name": "Open",
+									"nameLocation": "210:4:0",
+									"nodeType": "EnumValue",
+									"src": "210:4:0"
+								},
+								{
+									"id": 10,
+									"name": "Filled",
+									"nameLocation": "220:6:0",
+									"nodeType": "EnumValue",
+									"src": "220:6:0"
+								},
+								{
+									"id": 11,
+									"name": "Closed",
+									"nameLocation": "232:6:0",
+									"nodeType": "EnumValue",
+									"src": "232:6:0"
+								}
+							],
+							"name": "JobOfferStatus",
+							"nameLocation": "189:14:0",
+							"nodeType": "EnumDefinition",
+							"src": "184:56:0"
+						}
+					],
+					"src": "37:204:0"
+				},
+				"id": 0
+			},
+			"structs.sol": {
+				"ast": {
+					"absolutePath": "structs.sol",
+					"exportedSymbols": {
+						"ApplicantProfile": [
+							55
+						],
+						"CreatorProfile": [
+							36
+						],
+						"JobApplication": [
+							91
+						],
+						"JobApplicationStatus": [
+							8
+						],
+						"JobOffer": [
+							78
+						],
+						"JobOfferStatus": [
+							12
+						],
+						"ProfileType": [
+							4
+						]
+					},
+					"id": 92,
+					"license": "GPL-3.0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 14,
+							"literals": [
+								"solidity",
+								">=",
+								"0.7",
+								".0",
+								"<",
+								"0.9",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "37:31:1"
+						},
+						{
+							"absolutePath": "enums.sol",
+							"file": "./enums.sol",
+							"id": 15,
+							"nameLocation": "-1:-1:-1",
+							"nodeType": "ImportDirective",
+							"scope": 92,
+							"sourceUnit": 13,
+							"src": "70:21:1",
+							"symbolAliases": [],
+							"unitAlias": ""
+						},
+						{
+							"canonicalName": "CreatorProfile",
+							"id": 36,
+							"members": [
+								{
+									"constant": false,
+									"id": 17,
+									"mutability": "mutable",
+									"name": "id",
+									"nameLocation": "126:2:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 36,
+									"src": "121:7:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 16,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "121:4:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 19,
+									"mutability": "mutable",
+									"name": "email",
+									"nameLocation": "141:5:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 36,
+									"src": "134:12:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 18,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "134:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 21,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "159:4:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 36,
+									"src": "152:11:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 20,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "152:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23,
+									"mutability": "mutable",
+									"name": "tagline",
+									"nameLocation": "176:7:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 36,
+									"src": "169:14:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 22,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "169:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 25,
+									"mutability": "mutable",
+									"name": "description",
+									"nameLocation": "196:11:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 36,
+									"src": "189:18:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 24,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "189:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 27,
+									"mutability": "mutable",
+									"name": "creatorAddress",
+									"nameLocation": "221:14:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 36,
+									"src": "213:22:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 26,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "213:7:1",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 29,
+									"mutability": "mutable",
+									"name": "verified",
+									"nameLocation": "246:8:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 36,
+									"src": "241:13:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 28,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "241:4:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 32,
+									"mutability": "mutable",
+									"name": "profileType",
+									"nameLocation": "272:11:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 36,
+									"src": "260:23:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_enum$_ProfileType_$4",
+										"typeString": "enum ProfileType"
+									},
+									"typeName": {
+										"id": 31,
+										"nodeType": "UserDefinedTypeName",
+										"pathNode": {
+											"id": 30,
+											"name": "ProfileType",
+											"nameLocations": [
+												"260:11:1"
+											],
+											"nodeType": "IdentifierPath",
+											"referencedDeclaration": 4,
+											"src": "260:11:1"
+										},
+										"referencedDeclaration": 4,
+										"src": "260:11:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_enum$_ProfileType_$4",
+											"typeString": "enum ProfileType"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 35,
+									"mutability": "mutable",
+									"name": "jobOfferIDs",
+									"nameLocation": "296:11:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 36,
+									"src": "289:18:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+										"typeString": "uint256[]"
+									},
+									"typeName": {
+										"baseType": {
+											"id": 33,
+											"name": "uint",
+											"nodeType": "ElementaryTypeName",
+											"src": "289:4:1",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											}
+										},
+										"id": 34,
+										"nodeType": "ArrayTypeName",
+										"src": "289:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+											"typeString": "uint256[]"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "CreatorProfile",
+							"nameLocation": "100:14:1",
+							"nodeType": "StructDefinition",
+							"scope": 92,
+							"src": "93:217:1",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "ApplicantProfile",
+							"id": 55,
+							"members": [
+								{
+									"constant": false,
+									"id": 38,
+									"mutability": "mutable",
+									"name": "id",
+									"nameLocation": "347:2:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 55,
+									"src": "342:7:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 37,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "342:4:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 40,
+									"mutability": "mutable",
+									"name": "applicantAddress",
+									"nameLocation": "363:16:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 55,
+									"src": "355:24:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 39,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "355:7:1",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 42,
+									"mutability": "mutable",
+									"name": "fullname",
+									"nameLocation": "392:8:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 55,
+									"src": "385:15:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 41,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "385:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 44,
+									"mutability": "mutable",
+									"name": "email",
+									"nameLocation": "413:5:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 55,
+									"src": "406:12:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 43,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "406:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 46,
+									"mutability": "mutable",
+									"name": "location",
+									"nameLocation": "431:8:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 55,
+									"src": "424:15:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 45,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "424:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 48,
+									"mutability": "mutable",
+									"name": "bio",
+									"nameLocation": "452:3:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 55,
+									"src": "445:10:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 47,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "445:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 51,
+									"mutability": "mutable",
+									"name": "profileType",
+									"nameLocation": "473:11:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 55,
+									"src": "461:23:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_enum$_ProfileType_$4",
+										"typeString": "enum ProfileType"
+									},
+									"typeName": {
+										"id": 50,
+										"nodeType": "UserDefinedTypeName",
+										"pathNode": {
+											"id": 49,
+											"name": "ProfileType",
+											"nameLocations": [
+												"461:11:1"
+											],
+											"nodeType": "IdentifierPath",
+											"referencedDeclaration": 4,
+											"src": "461:11:1"
+										},
+										"referencedDeclaration": 4,
+										"src": "461:11:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_enum$_ProfileType_$4",
+											"typeString": "enum ProfileType"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 54,
+									"mutability": "mutable",
+									"name": "applicationIDs",
+									"nameLocation": "497:14:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 55,
+									"src": "490:21:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+										"typeString": "uint256[]"
+									},
+									"typeName": {
+										"baseType": {
+											"id": 52,
+											"name": "uint",
+											"nodeType": "ElementaryTypeName",
+											"src": "490:4:1",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											}
+										},
+										"id": 53,
+										"nodeType": "ArrayTypeName",
+										"src": "490:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+											"typeString": "uint256[]"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "ApplicantProfile",
+							"nameLocation": "319:16:1",
+							"nodeType": "StructDefinition",
+							"scope": 92,
+							"src": "312:202:1",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "JobOffer",
+							"id": 78,
+							"members": [
+								{
+									"constant": false,
+									"id": 57,
+									"mutability": "mutable",
+									"name": "id",
+									"nameLocation": "543:2:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 78,
+									"src": "538:7:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 56,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "538:4:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 59,
+									"mutability": "mutable",
+									"name": "title",
+									"nameLocation": "558:5:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 78,
+									"src": "551:12:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 58,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "551:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 61,
+									"mutability": "mutable",
+									"name": "description",
+									"nameLocation": "576:11:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 78,
+									"src": "569:18:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 60,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "569:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 63,
+									"mutability": "mutable",
+									"name": "compensation",
+									"nameLocation": "598:12:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 78,
+									"src": "593:17:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 62,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "593:4:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 66,
+									"mutability": "mutable",
+									"name": "creator",
+									"nameLocation": "631:7:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 78,
+									"src": "616:22:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_struct$_CreatorProfile_$36_storage_ptr",
+										"typeString": "struct CreatorProfile"
+									},
+									"typeName": {
+										"id": 65,
+										"nodeType": "UserDefinedTypeName",
+										"pathNode": {
+											"id": 64,
+											"name": "CreatorProfile",
+											"nameLocations": [
+												"616:14:1"
+											],
+											"nodeType": "IdentifierPath",
+											"referencedDeclaration": 36,
+											"src": "616:14:1"
+										},
+										"referencedDeclaration": 36,
+										"src": "616:14:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_struct$_CreatorProfile_$36_storage_ptr",
+											"typeString": "struct CreatorProfile"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 70,
+									"mutability": "mutable",
+									"name": "applications",
+									"nameLocation": "661:12:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 78,
+									"src": "644:29:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_array$_t_struct$_JobApplication_$91_storage_$dyn_storage_ptr",
+										"typeString": "struct JobApplication[]"
+									},
+									"typeName": {
+										"baseType": {
+											"id": 68,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 67,
+												"name": "JobApplication",
+												"nameLocations": [
+													"644:14:1"
+												],
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 91,
+												"src": "644:14:1"
+											},
+											"referencedDeclaration": 91,
+											"src": "644:14:1",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_JobApplication_$91_storage_ptr",
+												"typeString": "struct JobApplication"
+											}
+										},
+										"id": 69,
+										"nodeType": "ArrayTypeName",
+										"src": "644:16:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_array$_t_struct$_JobApplication_$91_storage_$dyn_storage_ptr",
+											"typeString": "struct JobApplication[]"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 73,
+									"mutability": "mutable",
+									"name": "status",
+									"nameLocation": "694:6:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 78,
+									"src": "679:21:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_enum$_JobOfferStatus_$12",
+										"typeString": "enum JobOfferStatus"
+									},
+									"typeName": {
+										"id": 72,
+										"nodeType": "UserDefinedTypeName",
+										"pathNode": {
+											"id": 71,
+											"name": "JobOfferStatus",
+											"nameLocations": [
+												"679:14:1"
+											],
+											"nodeType": "IdentifierPath",
+											"referencedDeclaration": 12,
+											"src": "679:14:1"
+										},
+										"referencedDeclaration": 12,
+										"src": "679:14:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_enum$_JobOfferStatus_$12",
+											"typeString": "enum JobOfferStatus"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 75,
+									"mutability": "mutable",
+									"name": "numberOfMaxHires",
+									"nameLocation": "711:16:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 78,
+									"src": "706:21:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 74,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "706:4:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 77,
+									"mutability": "mutable",
+									"name": "numberHired",
+									"nameLocation": "738:11:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 78,
+									"src": "733:16:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 76,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "733:4:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "JobOffer",
+							"nameLocation": "523:8:1",
+							"nodeType": "StructDefinition",
+							"scope": 92,
+							"src": "516:236:1",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "JobApplication",
+							"id": 91,
+							"members": [
+								{
+									"constant": false,
+									"id": 80,
+									"mutability": "mutable",
+									"name": "id",
+									"nameLocation": "788:2:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 91,
+									"src": "783:7:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 79,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "783:4:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 82,
+									"mutability": "mutable",
+									"name": "jobOfferId",
+									"nameLocation": "801:10:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 91,
+									"src": "796:15:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 81,
+										"name": "uint",
+										"nodeType": "ElementaryTypeName",
+										"src": "796:4:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 84,
+									"mutability": "mutable",
+									"name": "coverLetter",
+									"nameLocation": "825:11:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 91,
+									"src": "817:19:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 83,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "817:6:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 87,
+									"mutability": "mutable",
+									"name": "applicant",
+									"nameLocation": "859:9:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 91,
+									"src": "842:26:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_struct$_ApplicantProfile_$55_storage_ptr",
+										"typeString": "struct ApplicantProfile"
+									},
+									"typeName": {
+										"id": 86,
+										"nodeType": "UserDefinedTypeName",
+										"pathNode": {
+											"id": 85,
+											"name": "ApplicantProfile",
+											"nameLocations": [
+												"842:16:1"
+											],
+											"nodeType": "IdentifierPath",
+											"referencedDeclaration": 55,
+											"src": "842:16:1"
+										},
+										"referencedDeclaration": 55,
+										"src": "842:16:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_struct$_ApplicantProfile_$55_storage_ptr",
+											"typeString": "struct ApplicantProfile"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 90,
+									"mutability": "mutable",
+									"name": "status",
+									"nameLocation": "895:6:1",
+									"nodeType": "VariableDeclaration",
+									"scope": 91,
+									"src": "874:27:1",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_enum$_JobApplicationStatus_$8",
+										"typeString": "enum JobApplicationStatus"
+									},
+									"typeName": {
+										"id": 89,
+										"nodeType": "UserDefinedTypeName",
+										"pathNode": {
+											"id": 88,
+											"name": "JobApplicationStatus",
+											"nameLocations": [
+												"874:20:1"
+											],
+											"nodeType": "IdentifierPath",
+											"referencedDeclaration": 8,
+											"src": "874:20:1"
+										},
+										"referencedDeclaration": 8,
+										"src": "874:20:1",
+										"typeDescriptions": {
+											"typeIdentifier": "t_enum$_JobApplicationStatus_$8",
+											"typeString": "enum JobApplicationStatus"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "JobApplication",
+							"nameLocation": "762:14:1",
+							"nodeType": "StructDefinition",
+							"scope": 92,
+							"src": "755:149:1",
+							"visibility": "public"
+						}
+					],
+					"src": "37:869:1"
+				},
+				"id": 1
+			}
+		}
+	}
+}
